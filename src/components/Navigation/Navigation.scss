@@ -36,16 +36,11 @@ nav {
   border: none;
   border-radius: 999px;
   background: none;
-<<<<<<< HEAD
-=======
-  color: $blue;
->>>>>>> 867737a41154b39644cdce3ce8476d5bc307d810
   font-size: 20px;
   cursor: pointer;
   @include transition;
 
   &:hover {
-<<<<<<< HEAD
     color: $blue;
   }
 
@@ -67,14 +62,5 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-=======
-    filter: brightness(0) saturate(100%) invert(25%) sepia(72%) saturate(2294%)
-      hue-rotate(231deg) brightness(95%) contrast(92%);
-  }
-
-  img {
-    width: 40px;
-    height: 40px;
->>>>>>> 867737a41154b39644cdce3ce8476d5bc307d810
   }
 }

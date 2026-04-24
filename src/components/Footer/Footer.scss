@@ -1,8 +1,5 @@
 @use "../../styles/variables" as *;
-<<<<<<< HEAD
 @use "../../styles/media" as *;
-=======
->>>>>>> 867737a41154b39644cdce3ce8476d5bc307d810
 
 footer {
   position: static;
@@ -12,14 +9,11 @@ footer {
   padding: $p-1-5;
   text-align: center;
   pointer-events: none;
-<<<<<<< HEAD
   gap: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
 
-=======
->>>>>>> 867737a41154b39644cdce3ce8476d5bc307d810
   p {
     color: $grey-400;
     margin: 0;

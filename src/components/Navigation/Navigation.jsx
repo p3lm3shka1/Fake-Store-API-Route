@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Cart from "../Cart/Cart";
 import { useCart } from "../../context/cartContext";
 
@@ -15,20 +14,12 @@ function Navigation() {
   const { cartItems } = useCart();
   const quantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
-=======
-import { Link } from "react-router-dom";
-import "./Navigation.scss";
-import cartIcon from "../../assets/images/cart-icon.svg";
-
-function Navigation({ onCartClick }) {
->>>>>>> 867737a41154b39644cdce3ce8476d5bc307d810
   return (
     <nav>
       <div className="navigation">
         <Link to="/" className="logo">
           FakeStore
         </Link>
-<<<<<<< HEAD
 
         <button className="cart-btn" onClick={() => setCartOpened(true)}>
           <GrCart className="cart-btn__icon" />
@@ -38,12 +29,6 @@ function Navigation({ onCartClick }) {
       {cartOpened && (
         <Cart open={cartOpened} onClose={() => setCartOpened(false)} />
       )}
-=======
-        <button className="cart-btn" onClick={onCartClick}>
-          <img src={cartIcon} alt="Cart" />
-        </button>
-      </div>
->>>>>>> 867737a41154b39644cdce3ce8476d5bc307d810
     </nav>
   );
 }
