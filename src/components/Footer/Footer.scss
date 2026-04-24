@@ -1,0 +1,31 @@
+@use "../../styles/variables" as *;
+@use "../../styles/media" as *;
+
+footer {
+  position: static;
+  bottom: 0;
+  width: 100%;
+  box-shadow: $box-shadow;
+  padding: $p-1-5;
+  text-align: center;
+  pointer-events: none;
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    color: $grey-400;
+    margin: 0;
+  }
+  a {
+    color: $blue-950;
+    text-decoration: none;
+    pointer-events: auto;
+    @include transition;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+}

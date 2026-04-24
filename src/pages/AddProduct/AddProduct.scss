@@ -1,0 +1,120 @@
+@use "../../styles/variables" as *;
+@use "../../styles/media" as *;
+
+.add-product {
+  max-width: 600px;
+  box-shadow: $box-shadow;
+  margin: $p-2 auto $p-3 auto;
+  padding: $p-2-5 $p-2 $p-2 $p-2;
+  background: $white;
+  border-radius: 9px;
+
+  border: 1px solid $grey-50;
+
+  h1 {
+    font-size: 1.7rem;
+    color: $blue-900;
+    margin-bottom: 1.6rem;
+    font-weight: 800;
+    text-align: center;
+    font-family: $font-primary;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      font-size: 1rem;
+      font-weight: 600;
+      color: $blue-900;
+
+      input,
+      select,
+      textarea {
+        margin-top: 0.5em;
+        padding: 0.7em 1.1em;
+        border: 1.5px solid $grey-50;
+        border-radius: 9px;
+        font-size: 1rem;
+        color: $blue-900;
+        background: rgba($blue, 0.1);
+        outline: none;
+        @include transition;
+
+        &:focus {
+          border-color: $blue;
+          background: $white;
+          box-shadow: 0 2px 12px rgba(39, 99, 235, 0.07); // $blue немного прозрачный
+        }
+
+        &::placeholder {
+          color: $blue-900;
+          opacity: 0.7;
+        }
+      }
+
+      select {
+        appearance: none;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+        border-radius: 9px 9px 0 0;
+      }
+      textarea {
+        resize: vertical;
+        min-height: 56px;
+        max-height: 180px;
+        font-family: $font-primary;
+      }
+    }
+
+    &__error {
+      color: $error;
+      border-radius: 9px;
+      background: rgba($error, 0.1);
+      padding: 0.55em 0.95em;
+      font-size: 0.97em;
+      margin-bottom: 0.7em;
+      text-align: center;
+    }
+
+    &__btngroup {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__btn {
+        display: flex;
+        align-items: center;
+        gap: $p-1;
+        padding: $p-1 $p-2;
+        border: none;
+        border-radius: 9px;
+        background: rgba($blue, 0.1);
+        color: $blue;
+        font-weight: 600;
+        cursor: pointer;
+        @include transition;
+
+        &:hover:not(:disabled) {
+          background: $blue;
+          color: $white;
+        }
+
+        &:disabled {
+          background: $grey-50;
+          color: $grey-400;
+          cursor: not-allowed;
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

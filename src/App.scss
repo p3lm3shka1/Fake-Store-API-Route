@@ -1,0 +1,30 @@
+@use "./styles/variables" as *;
+@use "./styles/media" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+}
+
+body {
+  font-family: $font-primary;
+  background: $white;
+  color: $blue-950;
+  width: 100%;
+  position: relative;
+}

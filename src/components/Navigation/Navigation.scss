@@ -1,0 +1,66 @@
+@use "../../styles/variables" as *;
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 999999;
+  width: 100%;
+  box-shadow: $box-shadow;
+  padding: $p-1;
+  background-color: rgba($white, 0.8);
+}
+
+.navigation {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: $blue-900;
+  @include transition;
+
+  &:hover {
+    filter: brightness(0) saturate(100%) invert(25%) sepia(72%) saturate(2294%)
+      hue-rotate(231deg) brightness(95%) contrast(92%);
+  }
+}
+
+.cart-btn {
+  border: none;
+  border-radius: 999px;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  @include transition;
+
+  &:hover {
+    color: $blue;
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: $blue;
+    color: $white;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

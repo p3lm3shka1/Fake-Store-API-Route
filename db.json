@@ -1,0 +1,55 @@
+{
+  "products": [],
+  "productRatings": [
+    {
+      "productId": 2,
+      "rating": 4,
+      "id": "iq3-eylILFM"
+    },
+    {
+      "productId": 1,
+      "rating": 5,
+      "id": "mdzINOhBQl8"
+    },
+    {
+      "productId": 4,
+      "rating": 4,
+      "id": "pOf3L8Cy8O0"
+    },
+    {
+      "productId": 5,
+      "rating": 3,
+      "id": "eDzkT0Un-nM"
+    },
+    {
+      "productId": 14,
+      "rating": 3,
+      "id": "fAR_F6h7bFM"
+    },
+    {
+      "productId": 3,
+      "rating": 5,
+      "id": "tYabKIv2PMg"
+    },
+    {
+      "productId": 15,
+      "rating": 1,
+      "id": "mP-ahDnFtu0"
+    },
+    {
+      "productId": 6,
+      "rating": 1,
+      "id": "-Kt2klWjvZ8"
+    },
+    {
+      "productId": "qZcUBj35YLs",
+      "rating": 4,
+      "id": "nxpV4yzbY50"
+    },
+    {
+      "productId": "mWk0111Apqs",
+      "rating": 5,
+      "id": "1BMy25hVFhU"
+    }
+  ]
+}
