@@ -108,25 +108,24 @@
       font-weight: 700;
       margin-left: auto;
       color: $blue-900;
-      font-size: 1.09em;
+      font-size: 1.5rem;
     }
 
     &__remove-btn {
       display: flex;
       align-items: center;
+      justify-content: center;
+
       border: none;
       background: none;
       color: $blue-900;
-      font-size: 1.45rem;
+      font-size: 1.8rem;
       cursor: pointer;
-      padding: 0.12rem 0.2rem;
       transition: color 0.13s;
-      margin-left: 0.18em;
+      margin-bottom: 0.45rem;
 
       &:hover {
         color: $error;
-        border-radius: 9px;
-        background: rgba($error, 0.14);
       }
     }
   }

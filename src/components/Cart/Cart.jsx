@@ -1,6 +1,7 @@
 // Cart.jsx
 import { useCart } from "../../context/cartContext";
 import { IoClose, IoRemove, IoAdd, IoBagCheckOutline } from "react-icons/io5";
+import { GiFullWoodBucket } from "react-icons/gi";
 import "./Cart.scss";
 
 const Cart = ({ open, onClose }) => {
@@ -56,7 +57,7 @@ const Cart = ({ open, onClose }) => {
                       className="cart-item__remove-btn"
                       onClick={() => removeFromCart(item.id)}
                     >
-                      <IoClose />
+                      <GiFullWoodBucket />
                     </button>
                   </div>
                 </li>

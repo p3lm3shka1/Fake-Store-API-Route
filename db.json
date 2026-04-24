@@ -51,5 +51,6 @@
       "rating": 5,
       "id": "1BMy25hVFhU"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
