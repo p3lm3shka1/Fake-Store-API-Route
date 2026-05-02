@@ -30,3 +30,10 @@ $font-primary: "Nunito Sans", sans-serif;
 @mixin transition {
   transition: all 0.3s ease;
 }
+
+@mixin img-bg {
+  position: fixed;
+  inset: 0;
+  background: url(../../assets/images/hero-bg.png) no-repeat center / cover;
+  z-index: -1;
+}

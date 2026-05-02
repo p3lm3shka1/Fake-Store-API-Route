@@ -1,63 +1,178 @@
 @use "../../styles/variables" as *;
+@use "../../styles/media" as *;
 
 .profile__bg {
   position: fixed;
   inset: 0;
   z-index: 1200;
-  background: rgba(0, 0, 0, 0.01);
+  background: rgba(0, 0, 0, 0.16);
+  transition: background 0.23s;
 }
 
 .profile__overlay {
   position: fixed;
-
-  top: 76px;
-  right: 400px;
-
-  z-index: 1255;
-  width: max-content;
-  min-width: 260px;
+  top: 0;
+  right: 0;
+  z-index: 1220;
+  height: 100dvh;
+  width: 380px;
+  max-width: 95vw;
   background: $white;
   box-shadow: $box-shadow;
-  border-radius: 0 0 12px 12px;
-
-  padding: $p-1-5;
+  border-radius: 9px 0 0 9px;
   display: flex;
   flex-direction: column;
 
-  animation: profilesldin 0.25s cubic-bezier(0.4, 1.12, 0.71, 1.01);
+  animation: profilesldin 0.28s cubic-bezier(0.4, 1.12, 0.71, 1.01);
+}
 
-  &__content {
-    display: flex;
-    justify-content: center;
-    gap: $p-0-5;
+.profile__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.25rem $p-1 1.25rem;
+}
 
-    &__btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+.profile__title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $blue-900;
+  letter-spacing: 0.01rem;
+}
 
-      padding: 0.55rem 0.95rem;
-      border-radius: 10px;
+.profile__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: $blue-900;
+  font-size: 2.2rem;
+  cursor: pointer;
+  transition: color 0.18s;
 
-      background: rgba($blue, 0.1);
-      color: $blue;
-      font-weight: 600;
-      text-decoration: none;
-      white-space: nowrap;
+  svg {
+    font-size: 1.35rem;
+  }
+  &:hover {
+    color: $blue;
+  }
+}
 
-      @include transition;
+.profile__content {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  overflow: auto;
+}
 
-      &:hover {
-        background: $blue;
-        color: $white;
-      }
-    }
+.profile__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.profile__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.profile__label {
+  font-size: 0.9rem;
+  color: rgba($blue-900, 0.65);
+  font-weight: 600;
+}
+
+.profile__input {
+  width: 100%;
+  margin-top: 0.5em;
+  padding: 0.7em 1.1em;
+  border: 1.5px solid $grey-50;
+  border-radius: 9px;
+  font-size: 1rem;
+  color: $blue-900;
+  background: rgba($blue, 0.1);
+  outline: none;
+  @include transition;
+
+  &::placeholder {
+    color: $blue-900;
+    opacity: 0.7;
+  }
+
+  &:focus {
+    border-color: $blue;
+    background: $white;
+    box-shadow: 0 2px 12px rgba(39, 99, 235, 0.07);
+  }
+}
+
+.profile__btn {
+  width: 100%;
+  text-decoration: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: $p-1;
+  border-radius: 9px;
+  border: none;
+
+  font-weight: 700;
+  letter-spacing: 0.02rem;
+
+  cursor: pointer;
+  @include transition;
+}
+
+.profile__btn--primary {
+  background: rgba($blue, 0.1);
+  color: $blue;
+
+  &:hover {
+    background: $blue;
+    color: $white;
+  }
+}
+
+.profile__btn--secondary {
+  background: rgba($blue, 0.1);
+  color: $blue;
+
+  &:hover {
+    background: $blue;
+    color: $white;
+  }
+}
+
+.profile__link {
+  margin-top: 0.25rem;
+
+  background: none;
+  border: none;
+  padding: 0.25rem 0;
+
+  cursor: pointer;
+  font-weight: 700;
+  color: $blue-900;
+
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+
+  @include transition;
+
+  &:hover {
+    color: $blue;
   }
 }
 
 @keyframes profilesldin {
   from {
-    transform: translateY(-12px);
+    transform: translateX(110%);
     opacity: 0;
   }
   to {
@@ -66,37 +181,22 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .profile__overlay {
-    top: 74px;
-    right: 85px;
-    min-width: 240px;
-    padding: $p-1;
-  }
-}
-
 @media (max-width: 900px) {
   .profile__overlay {
-    top: 74px;
-    right: 85px;
-    min-width: 220px;
+    width: 340px;
   }
 
-  .profile__overlay__content__btn {
-    padding: 0.5rem 0.85rem;
-    font-size: 0.95rem;
+  .profile__content,
+  .profile__header {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
 @media (max-width: 768px) {
   .profile__overlay {
-    top: 74px;
-    min-width: unset;
-    width: auto;
-    border-radius: 0 0 14px 14px;
-  }
-
-  .profile__overlay__content {
-    justify-content: stretch;
+    width: 100vw;
+    max-width: 100vw;
+    border-radius: 0;
   }
 }

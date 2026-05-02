@@ -18,7 +18,7 @@ const Cart = ({ open, onClose }) => {
       <section className="cart__sidebar-overlay" onClick={onClose} />
       <aside className="cart__sidebar" onClick={(e) => e.stopPropagation()}>
         <div className="cart__sidebar__align-group">
-          <h2>Your Cart</h2>
+          <h3>Your Cart</h3>
           <button className="cart__sidebar__close-btn" onClick={onClose}>
             <IoClose />
           </button>
