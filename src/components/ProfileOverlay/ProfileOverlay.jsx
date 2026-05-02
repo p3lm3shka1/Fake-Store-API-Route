@@ -1,5 +1,9 @@
+import { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
+
+import { API_URL, LOCAL_URL } from "../../utils/api";
 
 import "./ProfileOverlay.scss";
 

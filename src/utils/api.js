@@ -1,5 +1,6 @@
 const API_URL = "https://fakestoreapi.com";
 const LOCAL_URL = "http://localhost:3001";
+const TOKEN_KEY = "fs_token";
 
 export async function apiFetch(url, options = {}) {
   try {
@@ -75,4 +76,33 @@ export async function saveUserRating(productId, rating) {
       body: JSON.stringify({ productId, rating }),
     });
   }
+}
+
+//user auth
+export function loginUser(username, password) {
+  return apiFetch(`${API_URL}/auth/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, password }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      if (data.token) {
+        saveToken(data.token);
+      }
+      return data;
+    });
+}
+
+export function saveToken(token) {
+  localStorage.setItem(TOKEN_KEY, token);
+}
+
+export function getToken() {
+  return localStorage.getItem(TOKEN_KEY);
+}
+
+export function clearToken() {
+  localStorage.removeItem(TOKEN_KEY);
 }
