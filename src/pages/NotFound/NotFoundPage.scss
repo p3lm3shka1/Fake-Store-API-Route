@@ -6,7 +6,7 @@
   align-items: center;
 
   &__img {
-    max-width: 100%;
+    max-width: 900px;
     object-fit: contain;
   }
 
@@ -26,6 +26,55 @@
     &:hover {
       background: $blue;
       color: $white;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .notfound {
+    padding: 0 1.25rem;
+
+    &__img {
+      max-width: 680px;
+      width: 92vw;
+    }
+
+    .link {
+      font-size: 22px;
+      padding: 0.45em 0.95em;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .notfound {
+    padding: 0 1rem;
+
+    &__img {
+      max-width: 520px;
+      width: 92vw;
+    }
+
+    .link {
+      font-size: 18px;
+      padding: 0.42em 0.9em;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .notfound {
+    padding: 0 0.75rem;
+
+    &__img {
+      max-width: 320px;
+      width: 95vw;
+    }
+
+    .link {
+      font-size: 16px;
+      padding: 0.4em 0.85em;
+      border-radius: 10px;
     }
   }
 }

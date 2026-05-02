@@ -1,0 +1,102 @@
+@use "../../styles/variables" as *;
+
+.profile__bg {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: rgba(0, 0, 0, 0.01);
+}
+
+.profile__overlay {
+  position: fixed;
+
+  top: 76px;
+  right: 400px;
+
+  z-index: 1255;
+  width: max-content;
+  min-width: 260px;
+  background: $white;
+  box-shadow: $box-shadow;
+  border-radius: 0 0 12px 12px;
+
+  padding: $p-1-5;
+  display: flex;
+  flex-direction: column;
+
+  animation: profilesldin 0.25s cubic-bezier(0.4, 1.12, 0.71, 1.01);
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    gap: $p-0-5;
+
+    &__btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0.55rem 0.95rem;
+      border-radius: 10px;
+
+      background: rgba($blue, 0.1);
+      color: $blue;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+
+      @include transition;
+
+      &:hover {
+        background: $blue;
+        color: $white;
+      }
+    }
+  }
+}
+
+@keyframes profilesldin {
+  from {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .profile__overlay {
+    top: 74px;
+    right: 85px;
+    min-width: 240px;
+    padding: $p-1;
+  }
+}
+
+@media (max-width: 900px) {
+  .profile__overlay {
+    top: 74px;
+    right: 85px;
+    min-width: 220px;
+  }
+
+  .profile__overlay__content__btn {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile__overlay {
+    top: 74px;
+    min-width: unset;
+    width: auto;
+    border-radius: 0 0 14px 14px;
+  }
+
+  .profile__overlay__content {
+    justify-content: stretch;
+  }
+}

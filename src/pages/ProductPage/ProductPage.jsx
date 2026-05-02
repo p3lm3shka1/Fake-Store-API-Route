@@ -3,8 +3,6 @@ import { Link, useParams } from "react-router-dom";
 
 import { useCart } from "../../context/cartContext";
 
-import { IoArrowBackOutline } from "react-icons/io5";
-
 import notFoundImg from "../../assets/images/404.png";
 
 import {
@@ -108,7 +106,6 @@ function ProductPage() {
       <div className="not-found">
         <img src={notFoundImg} alt="404 Not Found" className="not-found__img" />
         <Link to="/" className="link">
-          <IoArrowBackOutline />
           Go Back
         </Link>
       </div>

@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 
-import { IoArrowBackOutline } from "react-icons/io5";
-
 import notFoundImg from "../../assets/images/404.png";
 
 import "./NotFoundPage.scss";
@@ -12,7 +10,6 @@ function NotFoundPage() {
       <img src={notFoundImg} alt="404 Not Found" className="notfound__img" />
 
       <Link to="/" className="link">
-        <IoArrowBackOutline />
         Go back
       </Link>
     </section>
