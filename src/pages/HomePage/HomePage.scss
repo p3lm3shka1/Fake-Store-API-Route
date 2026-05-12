@@ -4,6 +4,7 @@
 .page {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 $p-1;
 }
 
 .page::before {
@@ -290,18 +291,34 @@
 //MEDIA
 
 @media (max-width: 1200px) {
-  .page {
-    padding: 0 $p-1;
+  .page-hero {
+    margin: $p-3 0;
+    padding: $p-3;
+
+    h1 {
+      font-size: 36px;
+      max-width: 520px;
+    }
   }
 
   .page-hero {
-    padding: $p-3;
+    .circle-big {
+      width: 240px;
+      height: 240px;
+      top: -30px;
+      right: -30px;
+    }
+
+    .circle-small {
+      width: 170px;
+      height: 170px;
+      bottom: -25px;
+      right: 90px;
+    }
   }
 
-  .product-category {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: $p-1;
+  .product-card .product-category {
+    align-self: flex-start;
   }
 
   .products {
@@ -315,12 +332,30 @@
 }
 
 @media (max-width: 992px) {
-  .page {
-    padding: 0 $p-1;
+  .page-hero {
+    margin: $p-2 0;
+    padding: $p-2;
+
+    h1 {
+      font-size: 32px;
+      max-width: 520px;
+    }
   }
 
   .page-hero {
-    padding: $p-3;
+    .circle-big {
+      width: 200px;
+      height: 200px;
+      top: -24px;
+      right: -24px;
+    }
+
+    .circle-small {
+      width: 140px;
+      height: 140px;
+      bottom: -18px;
+      right: 60px;
+    }
   }
 
   .products {
@@ -334,26 +369,46 @@
 }
 
 @media (max-width: 768px) {
-  .page {
-    padding: 0 $p-1;
-  }
-
   .page-hero {
-    padding: $p-3;
+    margin: $p-2 0;
+    padding: $p-2;
+
+    h3 {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+    }
+
+    h1 {
+      max-width: 100%;
+      font-size: 28px;
+      line-height: 1.05;
+    }
+
+    p {
+      max-width: 100%;
+    }
+
+    .circle-big,
+    .circle-small {
+      opacity: 0.35;
+      transform: scale(0.85);
+    }
   }
 
   .product-filter {
     width: 100%;
     justify-content: stretch;
   }
+
   .product-filter__select {
     width: 100%;
-    font-size: 1.125rem;
+    font-size: 1.05rem;
   }
 
   .products {
     grid-template-columns: 1fr;
   }
+
   footer,
   .nav {
     width: 100%;

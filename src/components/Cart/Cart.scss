@@ -185,6 +185,12 @@
   }
 }
 
+.cart__empty {
+  p {
+    margin: $p-1 0;
+  }
+}
+
 @keyframes cartsldin {
   from {
     transform: translateX(110%);

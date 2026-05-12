@@ -1,5 +1,6 @@
 import { GrCart } from "react-icons/gr";
 import { VscAccount } from "react-icons/vsc";
+import { useAuth } from "../../context/AuthContext";
 
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -12,8 +13,12 @@ import Cart from "../Cart/Cart";
 import ProfileOverlay from "../ProfileOverlay/ProfileOverlay";
 
 const Navigation = () => {
+  const { isAuth } = useAuth();
   const { cartItems } = useCart();
-  const quantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
+  const rawQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  const quantity = isAuth ? rawQuantity : 0;
+
   const [open, setOpen] = useState(false);
   const { scrollY } = useScroll();
   const hidden = useHiddenScroll({ threshold: 150, delta: 2 });

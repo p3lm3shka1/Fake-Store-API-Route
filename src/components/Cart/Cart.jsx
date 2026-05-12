@@ -1,17 +1,21 @@
-// Cart.jsx
 import { useCart } from "../../context/cartContext";
+import { useAuth } from "../../context/AuthContext";
 import { IoClose, IoRemove, IoAdd, IoBagCheckOutline } from "react-icons/io5";
 import { GiFullWoodBucket } from "react-icons/gi";
 import "./Cart.scss";
 
 const Cart = ({ open, onClose }) => {
+  const { isAuth } = useAuth();
   const { cartItems, removeFromCart, updateQuantity, clearCart } = useCart();
+
   const total = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0,
   );
 
   if (!open) return null;
+
+  const visibleItems = isAuth ? cartItems : [];
 
   return (
     <>
@@ -23,12 +27,16 @@ const Cart = ({ open, onClose }) => {
             <IoClose />
           </button>
         </div>
-        {cartItems.length === 0 ? (
-          <p>Your cart is empty.</p>
+
+        {visibleItems.length === 0 ? (
+          <div className="cart__empty">
+            <p>Your cart is empty.</p>
+            {!isAuth && <p>Please sign in to add products to your cart.</p>}
+          </div>
         ) : (
           <>
             <ul>
-              {cartItems.map((item) => (
+              {visibleItems.map((item) => (
                 <li key={item.id} className="cart-item">
                   <div className="cart-item__info">
                     <img
@@ -65,9 +73,11 @@ const Cart = ({ open, onClose }) => {
                 </li>
               ))}
             </ul>
+
             <div className="cart-total">
               <b>Total: ${total.toFixed(2)}</b>
             </div>
+
             <div className="btngroup">
               <button className="cart-clear-btn" onClick={clearCart}>
                 Clear Cart

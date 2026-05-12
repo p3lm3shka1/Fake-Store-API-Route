@@ -129,7 +129,7 @@
 
 @media (max-width: 1200px) {
   .add-product {
-    margin: 1rem 0 3rem 0;
+    margin: $p-2 auto;
     padding: 1.1rem 0.4rem 1rem 0.4rem;
     border-radius: 10px;
 
@@ -144,7 +144,7 @@
 
 @media (max-width: 992px) {
   .add-product {
-    margin: 1rem 0 3rem 0;
+    margin: $p-2 auto;
     padding: 1.1rem 0.4rem 1rem 0.4rem;
     border-radius: 10px;
 
@@ -159,7 +159,7 @@
 
 @media (max-width: 768px) {
   .add-product {
-    margin: 1rem 0 3rem 0;
+    margin: $p-2 auto;
     padding: 1.1rem 0.4rem 1rem 0.4rem;
     border-radius: 10px;
 

@@ -10,7 +10,6 @@ import {
 import StarRating from "../../components/StarRatings/StarRatings";
 
 import { FiLoader } from "react-icons/fi";
-import { MdAddBox } from "react-icons/md";
 
 import "../../App.scss";
 import "./HomePage.scss";
@@ -90,9 +89,6 @@ function HomePage() {
       )}
       {!isLoading && products.length > 0 && (
         <>
-          <Link to="/add-product" className="product-add-link">
-            <MdAddBox size={25} /> Add New Product
-          </Link>
           <div className="product-filter">
             <select
               value={category}

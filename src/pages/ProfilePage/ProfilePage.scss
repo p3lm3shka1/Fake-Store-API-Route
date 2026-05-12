@@ -1,1 +1,24 @@
 @use "../../styles/variables" as *;
+
+.profile_page {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &::before {
+    content: "";
+    position: fixed;
+
+    inset: 0;
+    background: url(../../assets/images/hero-bg.png) no-repeat center / cover;
+    z-index: -1;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+    color: $blue-900;
+    margin-bottom: 1.6rem;
+    font-weight: 800;
+    text-align: center;
+    font-family: $font-primary;
+  }
+}
